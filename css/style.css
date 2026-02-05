@@ -1,61 +1,105 @@
-/* --- COMPLETE LAYOUT RESET & CENTER FIX --- */
+/* Master Fix for Centering and Marquee */
+:root {
+    --primary: #6366f1;
+    --bg-gradient: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 100%);
+}
 
-/* Pure body ko center align karne ke liye */
 body.landing-body {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    overflow-x: hidden !important; /* Horizontal scroll rokne ke liye */
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center EVERYTHING */
+    overflow-x: hidden;
 }
 
-/* Hero Content Centering */
-.hero-section, .hero-content {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
+/* Hero Section Centering */
+.hero-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* MARQUEE FIX: Isse list niche nahi giregi */
+.hero-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #4b5563;
+    margin: 20px auto;
+    max-width: 650px;
+}
+
+.benefits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.benefit-tag {
+    background: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: var(--primary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* MARQUEE FIX: One Single Line */
 .scrolling-activity {
-    width: 100% !important;
-    overflow: hidden !important;
-    background: #fff !important;
-    padding: 30px 0 !important;
-    white-space: nowrap !important; /* Sab kuch ek line mein rakhne ke liye */
+    width: 100vw;
+    background: white;
+    padding: 25px 0;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.marquee {
+    display: flex;
+    width: 100%;
 }
 
 .marquee-content {
-    display: flex !important;
-    flex-direction: row !important; /* Line mein chalane ke liye */
-    gap: 30px !important;
-    width: max-content !important; /* Content ki jitni width hai utni hi rahe */
-    animation: scroll-left 40s linear infinite !important;
+    display: flex;
+    gap: 20px;
+    white-space: nowrap; /* Force list to stay in one line */
+    animation: marquee-scroll 40s linear infinite;
 }
 
-@keyframes scroll-left {
-    0% { transform: translateX(100vw); }
-    100% { transform: translateX(-100%); }
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .activity-pill {
-    display: inline-flex !important;
-    align-items: center !important;
-    padding: 12px 25px !important;
-    background: #f8fafc !important;
-    border-radius: 50px !important;
-    border: 1px solid #e2e8f0 !important;
-    flex-shrink: 0 !important; /* Pill ko chota hone se rokne ke liye */
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #f8fafc;
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    gap: 10px;
 }
 
-/* Footer Center Fix */
+.status-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; }
+.amount-green { color: #059669; font-weight: 800; }
+
+/* Footer Centering */
 .landing-footer {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 40px 0 !important;
-    display: block !important;
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    background: white;
+    margin-top: 50px;
 }

@@ -20,12 +20,33 @@
 
         <div class="hero-content">
             <h1>India's Most Secure <br><span>Digital Wallet System</span></h1>
-            <p>Experience manual verification, transparent rewards, and a controlled refer-and-earn system built for you.</p>
+            
+            <p class="hero-description">
+                Join India's fastest-growing transparent ecosystem. Build your digital wealth with manual security verification, 
+                performance-based reward plans, and a trusted community of thousands of verified users. 
+                Your growth, our priority.
+            </p>
+
+            <div class="benefits-grid">
+                <div class="benefit-tag">✨ Instant 5% Reward</div>
+                <div class="benefit-tag">🛡️ Manual Fraud Protection</div>
+                <div class="benefit-tag">💰 Referral Bonus ₹100</div>
+                <div class="benefit-tag">⚡ Fast 24/7 Withdrawals</div>
+            </div>
+
             <div class="hero-btns">
                 <a href="register.html" class="btn btn-primary-large">Get Started Today</a>
             </div>
         </div>
     </header>
+
+    <section class="scrolling-activity">
+        <div class="marquee-title">Live Platform Rewards</div>
+        <div class="marquee">
+            <div class="marquee-content" id="marquee-list">
+                </div>
+        </div>
+    </section>
 
     <section class="features">
         <div class="glass-card feature-card">
@@ -45,23 +66,30 @@
         </div>
     </section>
 
-    <section class="activity-snapshot">
-        <div class="glass-card">
-            <h2>Community Activity Highlights</h2>
-            <p>Some recent platform activity snapshots</p>
-            <ul class="activity-list">
-                <li>👤 User A — Platform rewards: ₹2,350</li>
-                <li>👤 User B — Platform rewards: ₹4,120</li>
-                <li>👤 User C — Platform rewards: ₹1,890</li>
-                <li>👤 User D — Platform rewards: ₹3,760</li>
-            </ul>
-            <small>*Figures shown are illustrative and represent platform activity, not guaranteed earnings.</small>
-        </div>
-    </section>
-
     <footer class="landing-footer">
-        <p>© 2026 Fundvia. Build for transparency and long-term scalability.</p>
-    </footer>
+    <p>© 2024 Fundvia. Build for transparency and long-term scalability.</p>
+</footer>
+
+    <script>
+        const marqueeList = document.getElementById('marquee-list');
+        const users = ["Aditya", "Rahul", "Suresh", "Priya", "Ankit", "Vikram", "Deepak", "Sneha", "Karan", "Amit", "Rohan", "Sonal", "Manish", "Pooja", "Arjun"];
+        
+        let content = "";
+        for(let i=0; i<40; i++) {
+            const name = users[Math.floor(Math.random() * users.length)];
+            const userNum = Math.floor(Math.random() * 99) + 1;
+            const amount = Math.floor(Math.random() * (10000 - 400 + 1)) + 400; // ₹400 to ₹10,000
+            
+            content += `
+                <div class="activity-pill">
+                    <span class="status-dot"></span> 
+                    👤 ${name} ${userNum} — Rewards: <span class="amount-green">₹${amount.toLocaleString()}</span>
+                </div>`;
+        }
+        
+        // Double the content for seamless infinite scrolling
+        marqueeList.innerHTML = content + content;
+    </script>
 
 </body>
 </html>

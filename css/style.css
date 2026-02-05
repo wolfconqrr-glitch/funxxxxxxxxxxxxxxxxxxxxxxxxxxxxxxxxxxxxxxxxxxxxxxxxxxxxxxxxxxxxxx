@@ -1,111 +1,61 @@
-/* --- Global Variables --- */
-:root {
-    --primary: #6366f1;
-    --bg-gradient: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 100%);
-    --glass: rgba(255, 255, 255, 0.6);
+/* --- COMPLETE LAYOUT RESET & CENTER FIX --- */
+
+/* Pure body ko center align karne ke liye */
+body.landing-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    overflow-x: hidden !important; /* Horizontal scroll rokne ke liye */
 }
 
-/* --- Centering Everything --- */
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg-gradient);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Horizontally center */
+/* Hero Content Centering */
+.hero-section, .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
 }
 
-.hero-section {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center all hero elements */
-    padding: 80px 20px;
-    box-sizing: border-box;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto; /* Ensure center alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-description {
-    font-size: 18px;
-    color: #4b5563;
-    line-height: 1.6;
-    margin: 20px auto 30px auto; /* Perfect center margin */
-    max-width: 650px;
-}
-
-/* --- Benefits List (Vertical Center) --- */
-.benefits-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Vertical list center */
-    gap: 12px;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.benefit-tag {
-    background: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    color: var(--primary);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* --- Marquee (Single Line Fix) --- */
+/* MARQUEE FIX: Isse list niche nahi giregi */
 .scrolling-activity {
-    width: 100vw;
-    overflow: hidden; /* Prevent horizontal scrollbar */
-    background: white;
-    padding: 25px 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-.marquee {
-    display: flex;
-    width: 100%;
+    width: 100% !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    padding: 30px 0 !important;
+    white-space: nowrap !important; /* Sab kuch ek line mein rakhne ke liye */
 }
 
 .marquee-content {
-    display: flex;
-    gap: 30px;
-    white-space: nowrap; /* Force one line */
-    animation: scroll 40s linear infinite;
+    display: flex !important;
+    flex-direction: row !important; /* Line mein chalane ke liye */
+    gap: 30px !important;
+    width: max-content !important; /* Content ki jitni width hai utni hi rahe */
+    animation: scroll-left 40s linear infinite !important;
 }
 
-@keyframes scroll {
-    from { transform: translateX(100vw); } /* Start from right edge */
-    to { transform: translateX(-100%); }   /* End at left edge */
+@keyframes scroll-left {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
 }
 
 .activity-pill {
-    display: inline-flex;
-    align-items: center;
-    background: #f8fafc;
-    padding: 12px 20px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 12px 25px !important;
+    background: #f8fafc !important;
+    border-radius: 50px !important;
+    border: 1px solid #e2e8f0 !important;
+    flex-shrink: 0 !important; /* Pill ko chota hone se rokne ke liye */
 }
 
-/* --- Footer Perfect Center --- */
+/* Footer Center Fix */
 .landing-footer {
-    width: 100%;
-    padding: 40px 0;
-    text-align: center; /* Center text */
-    background: white;
-    border-top: 1px solid #f3f4f6;
-    margin-top: auto; /* Push to bottom */
+    width: 100% !important;
+    text-align: center !important;
+    padding: 40px 0 !important;
+    display: block !important;
 }

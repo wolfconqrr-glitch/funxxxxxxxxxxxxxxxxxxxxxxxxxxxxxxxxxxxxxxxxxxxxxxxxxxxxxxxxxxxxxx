@@ -43,8 +43,7 @@
     <section class="scrolling-activity">
         <div class="marquee-title">Live Platform Rewards</div>
         <div class="marquee">
-            <div class="marquee-content" id="marquee-list">
-                </div>
+            <div class="marquee-content" id="marquee-list"></div>
         </div>
     </section>
 
@@ -67,29 +66,20 @@
     </section>
 
     <footer class="landing-footer">
-    <p>© 2024 Fundvia. Build for transparency and long-term scalability.</p>
-</footer>
+        <p>© 2026 Fundvia. Build for transparency and long-term scalability.</p>
+    </footer>
 
     <script>
         const marqueeList = document.getElementById('marquee-list');
         const users = ["Aditya", "Rahul", "Suresh", "Priya", "Ankit", "Vikram", "Deepak", "Sneha", "Karan", "Amit", "Rohan", "Sonal", "Manish", "Pooja", "Arjun"];
-        
         let content = "";
         for(let i=0; i<40; i++) {
             const name = users[Math.floor(Math.random() * users.length)];
             const userNum = Math.floor(Math.random() * 99) + 1;
-            const amount = Math.floor(Math.random() * (10000 - 400 + 1)) + 400; // ₹400 to ₹10,000
-            
-            content += `
-                <div class="activity-pill">
-                    <span class="status-dot"></span> 
-                    👤 ${name} ${userNum} — Rewards: <span class="amount-green">₹${amount.toLocaleString()}</span>
-                </div>`;
+            const amount = Math.floor(Math.random() * (10000 - 400 + 1)) + 400;
+            content += `<div class="activity-pill"><span class="status-dot"></span>👤 ${name} ${userNum} — Rewards: <span class="amount-green">₹${amount.toLocaleString()}</span></div>`;
         }
-        
-        // Double the content for seamless infinite scrolling
         marqueeList.innerHTML = content + content;
     </script>
-
 </body>
 </html>

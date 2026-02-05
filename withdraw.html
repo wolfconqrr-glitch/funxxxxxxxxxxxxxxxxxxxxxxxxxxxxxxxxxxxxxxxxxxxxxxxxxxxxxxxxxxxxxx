@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw | Fundvia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <nav class="sidebar">
+        <div class="sidebar-logo" onclick="window.location.href='dashboard.html'" style="cursor:pointer">F</div>
+        <div class="sidebar-menu">
+            <div class="menu-item" onclick="window.location.href='dashboard.html'">🏠</div>
+            <div class="menu-item" onclick="window.location.href='add-funds.html'">➕</div>
+            <div class="menu-item active">💸</div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <h1>Withdraw Funds</h1>
+            <p>Transfer your rewards to your bank account</p>
+        </header>
+
+        <div class="glass-card" style="max-width: 500px; margin-top: 30px;">
+            <div class="form-group">
+                <label>Withdrawal Amount (₹)</label>
+                <input type="number" id="amount" class="premium-input" placeholder="Enter amount">
+            </div>
+
+            <div class="form-group">
+                <label>UPI ID or Bank Details</label>
+                <textarea id="details" class="premium-input" rows="3" placeholder="Enter UPI ID or Bank Acc/IFSC"></textarea>
+            </div>
+
+            <button onclick="requestWithdraw(amount.value, details.value)" class="btn btn-primary-full">Request Withdrawal</button>
+        </div>
+    </main>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/withdraw.js"></script>
+</body>
+</html>

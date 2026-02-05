@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Funds | Fundvia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <nav class="sidebar">
+        <div class="sidebar-logo" onclick="window.location.href='dashboard.html'" style="cursor:pointer">F</div>
+        <div class="sidebar-menu">
+            <div class="menu-item" onclick="window.location.href='dashboard.html'">🏠</div>
+            <div class="menu-item active">➕</div>
+            <div class="menu-item" onclick="window.location.href='withdraw.html'">💸</div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <h1>Add Funds</h1>
+            <p>Select your plan and top up your wallet</p>
+        </header>
+
+        <div class="glass-card" style="max-width: 500px; margin-top: 30px;">
+            <div style="margin-bottom: 20px; text-align: center;">
+                <p>Scan UPI to Pay</p>
+                <div style="background: white; padding: 10px; display: inline-block; border-radius: 12px;">
+                    <div style="width: 150px; height: 150px; background: #eee; display: flex; align-items: center; justify-content: center;">QR Code</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Amount (₹)</label>
+                <input type="number" id="amount" class="premium-input" placeholder="Min. ₹500">
+            </div>
+
+            <div class="form-group">
+                <label>UTR / Transaction ID</label>
+                <input type="text" id="utr" class="premium-input" placeholder="12-digit UTR number">
+            </div>
+
+            <div class="form-group">
+                <label>Select Reward Plan</label>
+                <select id="duration" class="premium-input">
+                    <option value="45">45 Days (5% Reward)</option>
+                    <option value="90">90 Days (5% Reward)</option>
+                </select>
+            </div>
+
+            <button onclick="submitDeposit(amount.value, utr.value, duration.value)" class="btn btn-primary-full">Submit Deposit</button>
+        </div>
+    </main>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/deposit.js"></script>
+</body>
+</html>

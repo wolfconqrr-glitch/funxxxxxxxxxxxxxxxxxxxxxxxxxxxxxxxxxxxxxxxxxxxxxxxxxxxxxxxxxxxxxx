@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Fundvia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <nav class="sidebar">
+        <div class="sidebar-logo">F</div>
+        <div class="sidebar-menu">
+            <div class="menu-item active">🏠</div>
+            <div class="menu-item" onclick="window.location.href='add-funds.html'">➕</div>
+            <div class="menu-item" onclick="window.location.href='withdraw.html'">💸</div>
+        </div>
+        <div class="logout-btn" onclick="supabase.auth.signOut().then(()=>window.location.href='login.html')">🚪</div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <h1>Overview</h1>
+            <p id="user-display">Welcome back!</p>
+        </header>
+
+        <div class="overview-grid">
+            <div class="glass-card wallet-card-gradient">
+                <h3>Total Wallet Balance</h3>
+                <div class="balance-display">₹ <span id="balance">0.00</span></div>
+                <div class="wallet-actions">
+                    <a href="add-funds.html" class="btn btn-white">Add Funds</a>
+                    <a href="withdraw.html" class="btn btn-glass">Withdraw</a>
+                </div>
+            </div>
+
+            <div class="glass-card stats-card">
+                <h3>Statistics</h3>
+                <p>Status: <span class="tag">Verified</span></p>
+                <p>Transactions: <strong>24</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <aside class="right-bar">
+        <div class="glass-card profile-card">
+            <div class="avatar">👤</div>
+            <h4 id="user-email">User</h4>
+        </div>
+        <div class="glass-card">
+            <h4>Highlights</h4>
+            <p>User B: ₹4,120 Reward</p>
+        </div>
+    </aside>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

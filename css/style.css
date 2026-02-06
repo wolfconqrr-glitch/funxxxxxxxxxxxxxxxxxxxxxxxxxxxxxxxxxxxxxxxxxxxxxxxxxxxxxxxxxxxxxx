@@ -62,7 +62,7 @@ body {
 
 .btn-primary-full:active { transform: scale(0.98); }
 
-/* Custom tag for status */
+/* Custom tag for status ok */
 .tag { background: #10b981; color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
 /* Landing Page Specific Styles */
 .landing-body {
@@ -181,4 +181,5 @@ body {
 
 .auth-footer { margin-top: 25px; font-size: 14px; color: #4b5563; }
 .auth-footer a { color: var(--primary); font-weight: 600; text-decoration: none; }
+
 

@@ -1,115 +1,123 @@
-/* Sab kuch reset karke original layout wapas lane ke liye */
+/* Purane CSS ke niche ye add karein ya replace karein */
 
-:root {
-    --primary: #6366f1;
-    --bg-gradient: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 100%);
-}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; color: #444; margin-bottom: 8px; }
 
-body {
-    margin: 0;
+.premium-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.8);
+    font-size: 16px;
+    box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    background: var(--bg-gradient);
-    overflow-x: hidden;
-    display: block; /* Original vertical flow */
 }
 
-/* Hero Section Centering */
-.hero-section {
-    min-height: 70vh;
+.premium-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+
+.btn-primary-full {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-primary-full:active { transform: scale(0.98); }
+
+/* Custom tag for status */
+.tag { background: #10b981; color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+/* Landing Page Specific Styles */
+.landing-body {
+    background: var(--bg-gradient);
+    color: #1f2937;
+    overflow-x: hidden;
+}
+
+.landing-nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 20px 5%;
+}
+
+.hero-section {
+    min-height: 80vh;
     text-align: center;
-    padding: 60px 20px;
+    padding-top: 50px;
 }
 
 .hero-content h1 {
     font-size: 56px;
     font-weight: 800;
+    line-height: 1.1;
     margin-bottom: 20px;
 }
 
-.hero-description {
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content p {
     font-size: 18px;
     color: #4b5563;
-    max-width: 650px;
+    max-width: 600px;
     margin: 0 auto 30px;
-    line-height: 1.6;
 }
 
-/* Benefits Grid: Is baar horizontal (pehle jaisa) */
-.benefits-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.benefit-tag {
-    background: white;
-    padding: 10px 20px;
+.btn-primary-large {
+    background: var(--primary);
+    color: white;
+    padding: 18px 40px;
     border-radius: 50px;
-    font-weight: 600;
-    color: var(--primary);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
 
-/* MARQUEE: Ise ek separate "Floating Strip" banaya hai */
-.scrolling-activity {
-    width: 100%;
-    background: white;
-    padding: 20px 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    overflow: hidden;
-    margin: 40px 0;
-}
-
-.marquee-content {
-    display: flex;
-    gap: 30px;
-    white-space: nowrap;
-    animation: marquee-scroll 50s linear infinite;
-    width: max-content;
-}
-
-@keyframes marquee-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-.activity-pill {
-    background: #f8fafc;
-    padding: 12px 25px;
-    border-radius: 50px;
-    border: 1px solid #e2e8f0;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Features Grid: Original layout */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     padding: 50px 10%;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px;
+.feature-card {
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.3);
+    padding: 40px;
 }
 
-/* Footer Center */
-.landing-footer {
+.feature-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.activity-snapshot {
+    padding: 50px 10%;
     text-align: center;
-    padding: 40px 0;
-    background: white;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.activity-list li {
+    background: rgba(255,255,255,0.4);
+    margin: 10px 0;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
 }
